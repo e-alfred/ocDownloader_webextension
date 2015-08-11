@@ -1,0 +1,70 @@
+{
+	"Name":
+	{
+		"message": "ocDownloader"
+	},
+	"Description":
+	{
+		"message": "This extension allows you to directly download a file by right clicking a link on a web page and select Download With ocDownloader"
+	},
+	"ownCloudURL":
+	{
+		"message": "URL ownCloud"
+	},
+	"Username":
+	{
+		"message": "Utilisateur"
+	},
+	"Password":
+	{
+		"message": "Mot de Passe"
+	},
+	"Save":
+	{
+		"message": "Sauvegarder"
+	},
+	"InvalidURL":
+	{
+		"message": "URL invalide"
+	},
+	"Datasaved":
+	{
+		"message": "Données sauvegardées"
+	},
+	"Downloadlaunchedonyourserver":
+	{
+		"message": "Téléchargement lancé sur votre serveur"
+	},
+	"Unabletoreachyourserver":
+	{
+		"message": "Impossible de joindre votre serveur"
+	},
+	"Unabletolaunchthedownload":
+	{
+		"message": "Impossible de lancer le téléchargement"
+	},
+	"UnabletoretrievetrueYouTubevideoURL":
+	{
+		"message": "Impossible de retrouver la vraie URL YouTube de la vidéo"
+	},
+	"ReturnedGIDisnullIsAria2crunningasadaemon":
+	{
+		"message": "Le GID est nul ! Est-ce que Aria2c est démarré en mode daemon ?"
+	},
+	"NoresponsefromocDownloaderonyourserverPleasecheckthesettings":
+	{
+		"message": "Pas de réponse de ocDownloader sur votre server. Veuillez vérifier les paramètres"
+	},
+	"DownloadWithocDownloader":
+	{
+		"message": "Télécharger avec ocDownloader"
+	},
+	"VersionOK":
+	{
+		"message": "La version installée de ocDownloader est OK"
+	},
+	"VersionNOK":
+	{
+		"message": "Cet addon ne peut pas fonctionner avec la version installée de ocDownloader. Veuillez mettre à jour ocDownloader sur votre serveur."
+	}
+}
