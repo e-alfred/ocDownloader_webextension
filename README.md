@@ -1,4 +1,4 @@
-# ocDownloader_ChromeExtension
+# ocDownloader : The Chrome extension
 
 ## ocDownloader
 ocDownloader is an application for [ownCloud](https://owncloud.org). ocDownloader allows you to download files with multi-protocols using ARIA2 (HTTP(S)/FTP(S)/Youtube/BitTorrent).
