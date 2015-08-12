@@ -8,12 +8,6 @@
  * @copyright Xavier Beurois 2015
  */
 
-function StartsWith (String, LookingFor, Position)
-{
-   	Position = Position || 0;
-   	return String.indexOf (LookingFor, Position) === Position;
-}
-
 function EndsWith (String, LookingFor)
 {
     return String.indexOf (LookingFor, String.length - LookingFor.length) !== -1;
