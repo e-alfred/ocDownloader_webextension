@@ -45,8 +45,6 @@ function MakeOCURL (URL, Username, Passwd, Method)
 
 function OnClickHandler (Info, Tab)
 {
-	alert ("info: " + JSON.stringify (Info));
-	
 	chrome.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
 	{
 		var XHR = new XMLHttpRequest ();
