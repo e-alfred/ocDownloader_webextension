@@ -1,9 +1,9 @@
-# ocDownloader extension for both Firefox- and Chromium-compatible browsers
+# ocDownloader extension/addon for Firefox- and Chromium-compatible browsers
 
 ## ocDownloader
-ocDownloader is an application for [Nextcloud](https://www.nextcloud.com). ocDownloader allows you to download files with multi-protocols using ARIA2 or Curl (HTTP(S)/FTP(S)/Youtube/BitTorrent).
+ocDownloader is an application for [Nextcloud](https://www.nextcloud.com) that allows you to download files from different sources using ARIA2 or Curl (HTTP(S)/FTP(S)/Youtube/BitTorrent).
 
-This repository contains the [Webextension](https://wiki.mozilla.org/WebExtensions)-compatible extension to add downloads to ocDownloader directly from your browser on any website by clicking on a link. The extension adds an entry to the right-click context menu.
+This repository contains the [Webextension](https://wiki.mozilla.org/WebExtensions)-compatible extension to add downloads to ocDownloader directly from your browser on any website. The extension adds an entry to the right-click context menu shown after clicking on a link.
 
 To install ocDownloader on Nextcloud : Go to [apps.nextcloud.com](https://apps.nextcloud.com/apps/ocdownloader) and follow the instructions on https://github.com/e-alfred/ocdownloader/ to set it up.
 
@@ -17,7 +17,7 @@ To install ocDownloader on Nextcloud : Go to [apps.nextcloud.com](https://apps.n
 2. In Chrome, write in your address bar : "chrome://extensions"
 3. Check the checkbox "Developer mode"
 4. Click on th "Load unpacked extension" button
-5. Find the unzipped extension folder
+5. Find the unzipped extension folder and select it for installation
 
 ## How to use the extension in Firefox-based browsers
 1. First download the contents of this repository (use the "Download ZIP" button above) and rename the extension from *.zip to *.xpi
