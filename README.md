@@ -25,6 +25,6 @@ To install ocDownloader on Nextcloud : Go to [apps.nextcloud.com](https://apps.n
 3. Click on the menu next to the search bar and select "Install addon from file"
 4. Find the renamed *.xpi file and select it for installation
 
-## Author
-e-alfred
+## Authors
+e-alfred  
 (formerly) Xavier Beurois
