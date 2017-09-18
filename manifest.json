@@ -6,6 +6,12 @@
   	"version": "1.5",
 	"default_locale": "en_US",
 
+	"applications": {
+	  "gecko": {
+        "id": "ocdownloader@nextcloud"
+	  }
+	},
+	
   	"browser_action":
 	{
     	"default_icon": "img/icon-32.png",
