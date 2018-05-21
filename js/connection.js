@@ -49,7 +49,7 @@ function MakeOCURL (URL, Username, Passwd, Method)
 	}
 	URL = URL + 'ocs/v1.php/apps/ocdownloader/api/' + Method + '?format=json';
 	
-	return URL.substr (0, URL.indexOf(':')) + '://' + Username + ':' + Passwd + '@' + URL.substr (URL.indexOf('/') + 2);
+	return URL.substr (0, URL.indexOf(':')) + '://' +  encodeURIComponent(Username) + ':' + encodeURIComponent(Passwd) + '@' + URL.substr (URL.indexOf('/') + 2);
 }
 
 function ValidURL (URLString)
