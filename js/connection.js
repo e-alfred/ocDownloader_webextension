@@ -41,15 +41,15 @@ function NotifyMe (Message)
 	});
 }
 
-function MakeOCURL (URL, Username, Passwd, Method)
+function MakeOCURL (URL, Method)
 {
 	if (!EndsWith (URL, '/'))
 	{
 		URL += '/';
 	}
-	URL = URL + 'ocs/v1.php/apps/ocdownloader/api/' + Method + '?format=json';
+	URL = URL + 'index.php/apps/ocdownloader/api/' + Method + '?format=json';
 	
-	return URL.substr (0, URL.indexOf(':')) + '://' +  encodeURIComponent(Username) + ':' + encodeURIComponent(Passwd) + '@' + URL.substr (URL.indexOf('/') + 2);
+	return URL.substr (0, URL.indexOf(':')) + '://' + URL.substr (URL.indexOf('/') + 2);
 }
 
 function ValidURL (URLString)
@@ -84,9 +84,10 @@ function SaveConnectionData ()
 				'Passwd': Passwd
 			}, function (){
 				var XHR = new XMLHttpRequest ();
-				XHR.open ('POST', MakeOCURL (URL, Username, Passwd, 'version'), true);
+				XHR.open ('POST', MakeOCURL (URL, 'version'), true);
 				XHR.setRequestHeader ('OCS-APIREQUEST', 'true');
 				XHR.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
+				XHR.setRequestHeader ('Authorization', 'Basic ' + btoa(Username + ':' + Passwd));
 				XHR.onreadystatechange = function ()
 				{
 					if (XHR.readyState == 4)

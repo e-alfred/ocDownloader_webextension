@@ -32,15 +32,15 @@ function NotifyMe (Message)
 	});
 }
 
-function MakeOCURL (URL, Username, Passwd, Method)
+function MakeOCURL (URL, Method)
 {
 	if (!EndsWith (URL, '/'))
 	{
 		URL += '/';
 	}
-	URL = URL + 'ocs/v1.php/apps/ocdownloader/api/' + Method + '?format=json';
+	URL = URL + 'index.php/apps/ocdownloader/api/' + Method + '?format=json';
 	
-	return URL.substr (0, URL.indexOf(':')) + '://' + encodeURIComponent(Username) + ':' + encodeURIComponent(Passwd) + '@' + URL.substr (URL.indexOf('/') + 2);
+	return URL.substr (0, URL.indexOf(':')) + '://' + URL.substr (URL.indexOf('/') + 2);
 }
 
 function OnClickHandler (Info, Tab)
@@ -48,9 +48,10 @@ function OnClickHandler (Info, Tab)
 	chrome.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
 	{
 		var XHR = new XMLHttpRequest ();
-		XHR.open ('POST', MakeOCURL (Items.OCUrl, Items.Username, Items.Passwd, 'add'), true);
+		XHR.open ('POST', MakeOCURL (Items.OCUrl, 'add'), true);
 		XHR.setRequestHeader ('OCS-APIREQUEST', 'true');
 		XHR.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
+		XHR.setRequestHeader ('Authorization', 'Basic ' + btoa(Items.Username + ':' + Items.Passwd));
 		XHR.onreadystatechange = function ()
 		{
 			if (XHR.readyState == 4)
