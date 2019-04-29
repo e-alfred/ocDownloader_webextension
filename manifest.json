@@ -3,15 +3,9 @@
 
   	"name": "__MSG_Name__",
 	"description": "__MSG_Description__",
-  	"version": "1.6.0",
+  	"version": "1.6.1",
 	"default_locale": "en_US",
 
-	"applications": {
-	  "gecko": {
-        "id": "ocdownloader@nextcloud"
-	  }
-	},
-	
   	"browser_action":
 	{
     	"default_icon": "img/icon-32.png",
