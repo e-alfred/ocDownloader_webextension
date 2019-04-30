@@ -95,11 +95,11 @@ function SaveConnectionData ()
 						try
 						{
 					    	var OCS = JSON.parse (XHR.responseText);
-							OCS = OCS.ocs;
+							console.log (XHR.responseText);
 							
-							if (OCS.meta.statuscode == 100)
+							if (XHR.status == 200)
 							{
-								if (OCS.data.RESULT)
+								if (OCS.RESULT)
 								{
 									NotifyMe (chrome.i18n.getMessage ('VersionOK'));
 								}

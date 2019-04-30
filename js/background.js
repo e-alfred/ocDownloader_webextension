@@ -59,17 +59,17 @@ function OnClickHandler (Info, Tab)
 				try
 				{
 			    	var OCS = JSON.parse (XHR.responseText);
-					OCS = OCS.ocs;
-					
-					if (OCS.meta.statuscode == 100)
+					console.log (XHR.responseText);
+
+					if (XHR.status == 200)
 					{
-						if (!OCS.data.ERROR)
+						if (!OCS.ERROR)
 						{
-							NotifyMe (chrome.i18n.getMessage ('Downloadlaunchedonyourserver') + ': ' + OCS.data.FILENAME);
+							NotifyMe (chrome.i18n.getMessage ('Downloadlaunchedonyourserver') + ': ' + OCS.FILENAME);
 						}
 						else
 						{
-							NotifyMe (chrome.i18n.getMessage (OCS.data.MESSAGE));
+							NotifyMe (chrome.i18n.getMessage (OCS.MESSAGE));
 						}
 					}
 					else
