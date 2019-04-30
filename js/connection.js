@@ -8,7 +8,7 @@
  * @copyright Xavier Beurois 2015
  */
 
-var Manifest = chrome.runtime.getManifest ();
+var Manifest = browser.runtime.getManifest ();
 var NeededAPIVersion = Manifest.version;
 
 function StartsWith (String, LookingFor, Position)
@@ -24,7 +24,7 @@ function EndsWith (String, LookingFor)
 
 function NotifyMe (Message)
 {
-	chrome.notifications.create ('ocDownloader',
+	browser.notifications.create ('ocDownloader',
 	{
 		type: 'basic',
 		title: 'ocDownloader',
@@ -33,7 +33,7 @@ function NotifyMe (Message)
     }, function (iD)
 	{
 		setTimeout (function (){
-	  		chrome.notifications.clear ('ocDownloader', function ()
+	  		browser.notifications.clear ('ocDownloader', function ()
 			{
 				return;
 			});
@@ -70,15 +70,15 @@ function SaveConnectionData ()
 		
 		if (!ValidURL (document.getElementById ('ocurltf').value) || !(StartsWith (document.getElementById ('ocurltf').value, 'http') || StartsWith (document.getElementById ('ocurltf').value, 'https')))
 		{
-			document.getElementById ('messagep').textContent = chrome.i18n.getMessage ('InvalidURL');
+			document.getElementById ('messagep').textContent = browser.i18n.getMessage ('InvalidURL');
 			document.getElementById ('messagep').style.display = 'block';
 		}
 		else
 		{
-			document.getElementById ('messagep').textContent = chrome.i18n.getMessage ('Datasaved');
+			document.getElementById ('messagep').textContent = browser.i18n.getMessage ('Datasaved');
 			document.getElementById ('messagep').style.display = 'block';
 			
-			chrome.storage.local.set ({
+			browser.storage.local.set ({
 				'OCUrl': URL,
 				'Username': Username,
 				'Passwd': Passwd
@@ -101,21 +101,21 @@ function SaveConnectionData ()
 							{
 								if (OCS.RESULT)
 								{
-									NotifyMe (chrome.i18n.getMessage ('VersionOK'));
+									NotifyMe (browser.i18n.getMessage ('VersionOK'));
 								}
 								else
 								{
-									NotifyMe (chrome.i18n.getMessage ('VersionNOK'));
+									NotifyMe (browser.i18n.getMessage ('VersionNOK'));
 								}
 							}
 							else
 							{
-								NotifyMe (chrome.i18n.getMessage ('Unabletoreachyourserver'));
+								NotifyMe (browser.i18n.getMessage ('Unabletoreachyourserver'));
 							}
 						}
 						catch (E)
 						{
-							NotifyMe (chrome.i18n.getMessage ('NoresponsefromocDownloaderonyourserverPleasecheckthesettings'));
+							NotifyMe (browser.i18n.getMessage ('NoresponsefromocDownloaderonyourserverPleasecheckthesettings'));
 							console.log (E.message);
 						}
 				  	}
@@ -129,16 +129,16 @@ function SaveConnectionData ()
 // Execute when loading extension html page
 window.onload = function ()
 {
-	chrome.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
+	browser.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
 	{
-		document.getElementById ('ocurltf').placeholder = chrome.i18n.getMessage ('ownCloudURL');
-		document.getElementById ('ocurltflbl').textContent = chrome.i18n.getMessage ('ownCloudURL');
+		document.getElementById ('ocurltf').placeholder = browser.i18n.getMessage ('ownCloudURL');
+		document.getElementById ('ocurltflbl').textContent = browser.i18n.getMessage ('ownCloudURL');
 		
-		document.getElementById ('usernametf').placeholder = chrome.i18n.getMessage ('Username');
-		document.getElementById ('usernametflbl').textContent = chrome.i18n.getMessage ('Username');
+		document.getElementById ('usernametf').placeholder = browser.i18n.getMessage ('Username');
+		document.getElementById ('usernametflbl').textContent = browser.i18n.getMessage ('Username');
 		
-		document.getElementById ('passwdtf').placeholder = chrome.i18n.getMessage ('Password');
-		document.getElementById ('passwdtflbl').textContent = chrome.i18n.getMessage ('Password');
+		document.getElementById ('passwdtf').placeholder = browser.i18n.getMessage ('Password');
+		document.getElementById ('passwdtflbl').textContent = browser.i18n.getMessage ('Password');
 		
 		if (Items.OCUrl != undefined)
 		{
@@ -156,6 +156,6 @@ window.onload = function ()
 		}
 	});
 	
-	document.getElementById ('savebtn').value = chrome.i18n.getMessage ('Save');
+	document.getElementById ('savebtn').value = browser.i18n.getMessage ('Save');
 	document.getElementById ('savebtn').addEventListener("click", SaveConnectionData);
 }

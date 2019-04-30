@@ -15,7 +15,7 @@ function EndsWith (String, LookingFor)
 
 function NotifyMe (Message)
 {
-	chrome.notifications.create ('ocDownloader',
+	browser.notifications.create ('ocDownloader',
 	{
 		type: 'basic',
 		title: 'ocDownloader',
@@ -24,7 +24,7 @@ function NotifyMe (Message)
     }, function (iD)
 	{
 		setTimeout (function (){
-	  		chrome.notifications.clear ('ocDownloader', function ()
+	  		browser.notifications.clear ('ocDownloader', function ()
 			{
 				return;
 			});
@@ -45,7 +45,7 @@ function MakeOCURL (URL, Method)
 
 function OnClickHandler (Info, Tab)
 {
-	chrome.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
+	browser.storage.local.get (['OCUrl', 'Username', 'Passwd'], function (Items)
 	{
 		var XHR = new XMLHttpRequest ();
 		XHR.open ('POST', MakeOCURL (Items.OCUrl, 'add'), true);
@@ -65,21 +65,21 @@ function OnClickHandler (Info, Tab)
 					{
 						if (!OCS.ERROR)
 						{
-							NotifyMe (chrome.i18n.getMessage ('Downloadlaunchedonyourserver') + ': ' + OCS.FILENAME);
+							NotifyMe (browser.i18n.getMessage ('Downloadlaunchedonyourserver') + ': ' + OCS.FILENAME);
 						}
 						else
 						{
-							NotifyMe (chrome.i18n.getMessage (OCS.MESSAGE));
+							NotifyMe (browser.i18n.getMessage (OCS.MESSAGE));
 						}
 					}
 					else
 					{
-						NotifyMe (chrome.i18n.getMessage ('Unabletoreachyourserver'));
+						NotifyMe (browser.i18n.getMessage ('Unabletoreachyourserver'));
 					}
 				}
 				catch (E)
 				{
-					NotifyMe (chrome.i18n.getMessage ('NoresponsefromocDownloaderonyourserverPleasecheckthesettings'));
+					NotifyMe (browser.i18n.getMessage ('NoresponsefromocDownloaderonyourserverPleasecheckthesettings'));
 					console.log (E.message);
 				}
 		  	}
@@ -88,9 +88,9 @@ function OnClickHandler (Info, Tab)
 	});
 }
 
-chrome.contextMenus.create ({
-	'title': chrome.i18n.getMessage('DownloadWithocDownloader'),
+browser.contextMenus.create ({
+	'title': browser.i18n.getMessage('DownloadWithocDownloader'),
 	'contexts': ['link']
 });
 
-chrome.contextMenus.onClicked.addListener (OnClickHandler);
+browser.contextMenus.onClicked.addListener (OnClickHandler);
