@@ -14,6 +14,7 @@ To install ocDownloader on Nextcloud : Go to [apps.nextcloud.com](https://apps.n
 - Spanish : Erik Fargas
 - Russian : AlucoST
 - German : Sinus23
+- Korean : hwiorn
 
 ## Authors
 e-alfred  

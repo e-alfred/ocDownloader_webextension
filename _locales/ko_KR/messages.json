@@ -1,0 +1,70 @@
+ {
+	"Name":
+	{
+		"message": "ocDownloader"
+	},
+	"Description":
+	{
+		"message": "이 확장 기능을 사용하면 웹 페이지의 링크를 마우스 오른쪽 버튼으로 클릭하고, ocDownloader로 다운로드를 선택하여 파일을 직접 다운로드 할 수 있습니다"
+	},
+	"ownCloudURL":
+	{
+		"message": "서버 URL 주소"
+	},
+	"Username":
+	{
+		"message": "사용자 이름"
+	},
+	"Password":
+	{
+		"message": "비밀번호"
+	},
+	"Save":
+	{
+		"message": "저장"
+	},
+	"InvalidURL":
+	{
+		"message": "잘못된 URL"
+	},
+	"Datasaved":
+	{
+		"message": "저장됨"
+	},
+	"Downloadlaunchedonyourserver":
+	{
+		"message": "서버에서 다운로드를 시작하였습니다"
+	},
+	"Unabletoreachyourserver":
+	{
+		"message": "서버에 연결할 수 없습니다"
+	},
+	"Unabletolaunchthedownload":
+	{
+		"message": "다운로드를 시작할 수 없습니다"
+	},
+	"UnabletoretrievetrueYouTubevideoURL":
+	{
+		"message": "실제 YouTube 동영상 URL을 가져올 수 없습니다"
+	},
+	"ReturnedGIDisnullIsAria2crunningasadaemon":
+	{
+		"message": "반환된 GID가 null 입니다! Aria2c는 데몬으로 실행 중입니까?"
+	},
+	"NoresponsefromocDownloaderonyourserverPleasecheckthesettings":
+	{
+		"message": "서버의 ocDownloader에서 응답이 없습니다. 서버의 설정을 확인하십시오"
+	},
+	"DownloadWithocDownloader":
+	{
+		"message": "ocDownloader로 다운로드"
+	},
+	"VersionOK":
+	{
+		"message": "설치된 ocDownloader 버전 정상"
+	},
+	"VersionNOK":
+	{
+		"message": "서버에 설치된 ocDownloader와 이 애드온이 동작하지 않을 수 있습니다. 서버의 ocDownloader를 업데이트하십시오."
+	}
+}
